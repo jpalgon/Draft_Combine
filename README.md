@@ -97,7 +97,7 @@ You can never spend too much time cleaning and doing EDA. While I don't think my
 
 ## For More Information
 
-Please look at my full analysis in [my Jupyter Notebooks](https://github.com/jpalgon/Draft_Stats) or my [presentation](./Draft_Combine.pdf).
+Please look at my full analysis in [my Jupyter Notebooks](https://github.com/jpalgon/Draft_Stats) or my [presentation](./Scouting Combine.pdf).
 
 For any additional questions, please contact:
 
