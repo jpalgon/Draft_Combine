@@ -75,7 +75,11 @@ Even though OL do not have any college statistics I could use, it did have some 
 
 ## Conclusions
 
+Combine athletic testing can be a very good separator for the day a player will be drafted especially when weight is combined with a speed or agility test.
 
+Offensive college stats bear more weight than defensive stats while the final year of a college career is more important than the career college statistics with QBs being an exception.
+
+My model can be very useful for predicting whether a player will be drafted or not which would be of great interest to NFL teams in day 3 of the draft.
 
 ## Next steps:
 
@@ -83,9 +87,9 @@ Get more data
 - Advanced stats
 - Non Primary Stats
 - More bio information
-- Scouting Reports
+- Medical information? (not sure how well good medical data for college prospects would be)
 
-Add scouting report information and other non numeric data
+Use NLP on scouting reports.
 
 ## What I learned
 
