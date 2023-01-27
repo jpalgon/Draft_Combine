@@ -47,7 +47,7 @@ I ran 6 different models:
 ### TSNE of GaussianMixture Model
 ![TSNE](./Images/TSNE.png)
 
-For my first model, I did some unsupervised learning in an attempt to see how the model would group my data and what patterns it may find. It did a pretty good job of sorting the data into positions and even kept similar positions together like (OL, DL, DE, and DT), (WR, TE, and FB), (DB, CB, and S), and (K and P). However just using the four features groups it created did not lead to a good model result.
+For my first model, I did some unsupervised learning in an attempt to see how the model would group my data and what patterns it may find. It did a pretty good job of sorting the data into positions and even kept similar positions together like (OL, DL, DE, and DT), (WR, TE, and FB), (DB, CB, and S), and (K and P). However just using the four features groups it created did not lead to a good model result. The Sequential Neural Network returnedd similar poor results.
 
 ### Random Forest Matrix
 ![Matrix](./Images/matrix.png)
