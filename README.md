@@ -32,24 +32,27 @@ Additionally, I supplemented the sportsreference data with the NFL_data Python p
 
 ## Modeling
 
+Knowing that not all athletic testing results are the same across positions and body types. I did feature engineering to create 3 scores (speed, cone agility, and shuttle agility) that factors weight into the 40 yard dash, 3 cone drill, and shuttle run. The speed score was created by Bill Barnwell in 2008. Since shuttle run times were on a similar scale to the 40 yard dash I just replaced the 40 yard dash time of his equation with the shuttle run times. 3 cone drill was slightly larger so I slightly tinkered with the formula to try and put 3 cone drill on the same scale as the 40 year dash and shuttle run. 
+
 For my modeling I separated my numeric columns from my categorical columns. On my categorical columns, I OneHotEncoded them. On my numerical columns, I used a simple imputer to handle the NaNs and impute 0 as any NaN should be 0 anyway based on how I scraped my data. Additionally, I used a StandardScaler on the numerical data. I had a very balanced class dataset so StandardScaler was appropriate.
 
-
-
-Late in the game I tried combinations of SMOTE, RandomOverSampler and RandomUnderSampler with different strategy weights. The use of RandomUnderSampler created an increase in recall but at the cost of accuracy. I will continue to tune these parameters for all models in attempt to get some better results. For my final model oversampling with a strategy ratio of 1 was my best to balance the data.
-
-In total I ran 6 different models:
+I ran 6 different models:
 - GaussianMixture
 - Decision Tree
 - Random Forest
 - KNN
 - XGBoost
-- 
+- Sequential Neural Network
 
-### Logistic Regression Matrix
+### TSNE of GaussianMixture Model
+![TSNE](./Images/TSNE.png)
+
+For my first model, I did some unsupervised learning in an attempt to see how the model would group my data and what patterns it may find. It did a pretty good job of sorting the data into positions and even kept similar positions together like OL, DL, DE, and DT, WR, TE, and FB, and K and P. However just using the four features groups it created did not lead to a good model result.
+
+### Random Forest Matrix
 ![Matrix](./Images/matrix.png)
 
-Predicting enough correct first round picks is very tricky with the class imbalance. Logistic Regression wasn't my best model for recall but the models that maximized recall had too poor of accuracy scores to be helpful. While I was hoping for some better predictions, this model is on the right track as it's accuracy was solid especially given was projecting players in the first round at a much higher rate than the classes indicate.
+The Random Forest, Decision Tree, XGBoost, and KNN models all performed fairly well with an accuracy range of .55 to .63 and all did very well at classifying undrafted players. 
 
 ## Evaluation
 
