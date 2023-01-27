@@ -47,57 +47,53 @@ I ran 6 different models:
 ### TSNE of GaussianMixture Model
 ![TSNE](./Images/TSNE.png)
 
-For my first model, I did some unsupervised learning in an attempt to see how the model would group my data and what patterns it may find. It did a pretty good job of sorting the data into positions and even kept similar positions together like OL, DL, DE, and DT, WR, TE, and FB, and K and P. However just using the four features groups it created did not lead to a good model result.
+For my first model, I did some unsupervised learning in an attempt to see how the model would group my data and what patterns it may find. It did a pretty good job of sorting the data into positions and even kept similar positions together like (OL, DL, DE, and DT), (WR, TE, and FB), (DB, CB, and S), and (K and P). However just using the four features groups it created did not lead to a good model result.
 
 ### Random Forest Matrix
 ![Matrix](./Images/matrix.png)
 
-The Random Forest, Decision Tree, XGBoost, and KNN models all performed fairly well with an accuracy range of .55 to .63 and all did very well at classifying undrafted players. 
+The Random Forest, Decision Tree, XGBoost, and KNN models all performed fairly well with an accuracy range of .55 to .63 and all did very well at classifying undrafted players. The Random Forest had the second best recall score for class 0 but the highest f1, recall, and precision scores for every other class metric combination along with the best accuracy so it was the clear winner.
 
 ## Evaluation
 
-### Age by Position for each Round
-![Age by Pos](./Images/agebypos.png)
+### Top Correlated Features with Round
+![Corr](./Images/corr.png)
 
-For each position the age of the round 1 players is significantly lower than the non round 1 players.
+All 3 features I engineered were towards the top including speed being the top metric. More top offensive than defensive stats. Final season stats appeared instead of career stats except for QB stats.
 
-### College Conferences
-![College Conferences](./Images/conferences.png)
+### QB Athletic Testing
+![QB Bench Reps](./Images/qbbench.png)
+![QB Speed](./Images/qbspeed.png)
 
-The power 5 conferences have all of the highest ratios of players drafted in round 1. 12.5% is the expected first round ratio.
+While bench reps wasn't actually super important overall it did help distinguish between drafted and undrafted players for QBs. However the speed score helped separate the round 1-3 QBs from the rest of the group.
 
-### Position Ratio
-![Model Results](./Images/posratio.png)
+### OL Athletic Testing
+![OL Speed](./Images/olspeed.png)
+![OL Agility](./Images/olagility.png)
 
-Premium positions have the highest ratios of players drafted in round 1. 12.5% is the expected first round ratio.
+Even though OL do not have any college statistics I could use, it did have some very important athletic testing scores. Both the speed shuttle agility scores were the best for the day 1 picks, the worst for undrafted OL and in the middle but still separated from both for the day 3 OL.
 
 ## Conclusions
 
-Premium positions, top conferences, and age are the biggest driving factors which isn't surprising.
 
-While age is significant in predicting round 1 players, it complicates some takeaways from numerical data.
-
-Rate stats better than cumulative stats mainly due to the fact that many of the best players declare their junior year and don't play in their would be senior season.
 
 ## Next steps:
 
 Get more data
-- Final season
 - Advanced stats
 - Non Primary Stats
 - More bio information
+- Scouting Reports
 
 Add scouting report information and other non numeric data
 
 ## What I learned
 
-If you are going to web scrape data, make sure to give yourself extra time to either get the scraper to work or to have a backup plan. If I had not found the guide on the web scraping requirements of sportsreference I am not sure I would have gotten the numerical data I had.
-
-Due to the web scraping not being finished until a few days before the project was due, I was not able to finish nearly as much as I would have liked. After seeing my models' results I realized that I needed more data. For starters I would have added at least 5 more years to the data. Additionally, I would have gotten each individual college season for each player instead of just their career totals. There is the possibility that additional information would not have made much of a difference as projecting the NFL draft is a very difficult task, however it would have been good to do this step after my models' yielded somewhat underwhelming results.
+You can never spend too much time cleaning and doing EDA. While I don't think my results would have been drastically different, there were a few areas I wish I had more time to spend on (college conference had missing values I could have gotten had I not needed to keep pushing on). Additionally, I would have loved to spend more time thinking about and trying feature engineering especially considering the success I had with the 3 ones I used in this project.
 
 ## For More Information
 
-Please look at my full analysis in [my Jupyter Notebooks](https://github.com/jpalgon/Draft_Combine) or my [presentation](./Draft_Combine.pdf).
+Please look at my full analysis in [my Jupyter Notebooks](https://github.com/jpalgon/Draft_Stats) or my [presentation](./Draft_Combine.pdf).
 
 For any additional questions, please contact:
 
