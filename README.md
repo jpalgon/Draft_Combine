@@ -2,7 +2,7 @@
 
 # **Author**: Josh Palgon
 
-![Combine](./Images/combine.jpg)
+![Combine](./Images/Combine.png)
 
 ## Overview
 
